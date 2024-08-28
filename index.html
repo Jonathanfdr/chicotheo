@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dá sachê pra gente?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #2c3e50;
+            margin-top: 50px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #sim {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        #sim:hover {
+            background-color: #27ae60;
+        }
+
+        #nao {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        #nao:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dá sachê pra gente?</h1>
+    
+    <img id="imagem" src="primeira.jpeg" alt="Imagem inicial">
+
+    <div id="texto" style="font-size: 24px; color: #34495e; margin-top: 15px; margin-bottom: 15px;">
+        
+    </div>
+
+    <div class="button-container">
+        <button id="sim">Sim</button>
+        <button id="nao">Não</button>
+    </div>
+
+    <script>
+        const morri = "morri.jpeg";
+        const nao1 = "nao1.jpeg";
+        const nao2 = "nao2.jpeg";
+        const obrigado = "obrigado.jpeg";
+        const imgElement = document.getElementById("imagem");
+        const textoElement = document.getElementById("texto");
+
+        var count = 0;
+        // Funções para trocar a imagem
+        document.getElementById("sim").onclick = function() {
+            imgElement.src = obrigado;
+            textoElement.innerHTML = "Obrigado!";
+            count = 0;
+        }
+
+        document.getElementById("nao").onclick = function() {
+            count++;
+            
+            if(count == 1){
+                imgElement.src = nao1;
+                textoElement.innerHTML = "DÁ SACHÊÊ!";
+            }
+            else if(count == 2) {
+                textoElement.innerHTML = "PELO AMOR DE DEUS HUMANO!";
+                imgElement.src = nao2;
+            }
+            else if (count == 3) {
+                textoElement.innerHTML = "Morremos de fome!";
+                imgElement.src = morri;
+            }
+        }
+    </script>
+
+</body>
+</html>
